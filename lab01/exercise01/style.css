@@ -1,5 +1,6 @@
 body * {
     box-sizing: border-box;
+    
 }
 
 body {
@@ -9,3 +10,26 @@ body {
 /*
 Add some style blocks below this line to style the card.
 */
+
+/* section {
+    width: 50vh;
+    height: 50vh;   
+    padding: 10px;
+    margin: 10px;
+   
+} */
+
+section {
+    box-sizing: border-box;
+    border: dotted 1px #CCC;
+    width: 352px;
+    height: 540px;   
+    
+    
+}
+
+.text-and-button{
+    padding-left: 20px;
+    padding-right: 30px;
+   
+}
