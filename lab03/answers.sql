@@ -9,30 +9,30 @@ FROM users;
 
 
 
--- Exercise 3
+-- Exercise 3: SORTING
 SELECT id, first_name, last_name 
 FROM users
 ORDER BY last_name;
 
 
--- Exercise 4
+-- Exercise 4: FILTERING 
 SELECT id, user_id, image_url 
 FROM posts
 WHERE user_id=26;
 
 
--- Exercise 5
+-- Exercise 5: FILTERING- LOGICAL OPERATORS
 SELECT id, image_url, user_id
 FROM posts
 WHERE user_id=26 or user_id=12;
 
--- Exercise 6
+-- Exercise 6: USING FUNCTIONS IN A SELECT STATEMENT
 SELECT COUNT(id)
 FROM posts;
 
 
 
--- Exercise 7
+-- Exercise 7: AGGREGATING DATA
 SELECT user_id, count(user_id)
 FROM comments 
 GROUP BY user_id
@@ -57,12 +57,17 @@ WHERE following.user_id=26;
 
 
 
--- Exercise 10
+-- Exercise 10: JOINING THREE TABLES
+SELECT posts.id, posts.pub_date, following.following_id, users.username
+FROM following
+INNER JOIN posts ON posts.user_id =following.following_id
+INNER JOIN users ON posts.user_id = users.id
+WHERE following.user_id =26
+ORDER BY posts.pub_date DESC;
 
 
 
-
--- Exercise 11
+-- Exercise 11 : INSERTING
 INSERT INTO bookmarks(user_id,post_id,timestamp)
 VALUES(26,219,now());
 
@@ -74,7 +79,7 @@ VALUES(26,221,now())
 
 
 
--- Exercise 12
+-- Exercise 12: DELETING
 
 DELETE FROM bookmarks
 WHERE post_id = 219;
@@ -87,7 +92,7 @@ WHERE post_id = 221;
 
 
 
--- Exercise 13
+-- Exercise 13: UPDATING
 
 UPDATE users
 SET email = 'knick2022@gmail.com'
